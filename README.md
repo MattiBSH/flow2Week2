@@ -1,1 +1,4 @@
-ALL DONE TUESDAY
+Tuesday - ALL DONE 
+Wednesday - 
+Thursday -
+Friday -
