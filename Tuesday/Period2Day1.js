@@ -113,8 +113,7 @@ console.log(count(votes));
 
   /**b
    * same reason as before
-   *  * The console.log() should be made outside the class
-   * So the return type should be a variable and not a console.log();
+  
    */
 
   // Initiate counter
