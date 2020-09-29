@@ -108,8 +108,7 @@ console.log(count(votes));
 
   /**5 */
   /**a 
-   * The console.log() should be made outside the class
-   * So the return type should be a variable and not a console.log();
+   * Man får kun funtions signaturen og derfor kan den ikke blive sat.
   */
 
   /**b
