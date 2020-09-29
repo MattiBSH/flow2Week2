@@ -87,12 +87,11 @@ var members = [
   {name : "Janne", age: 25},
   {name : "Martin", age: 22}];
 /*c*/ 
-  var average = members.reduce((accumulator, member,index,arr) => {
-    accumulator += member.age
-   
-    return accumulator/arr.length
-  }, 0)
-  console.log(average);
+    function getAverageAge(members) {
+    return members.reduce((ac, member) => ac + member.age, 0) / members.length;
+    }
+  console.log(getAverageAge(members));
+
 /**d */
 const votes = [ "Biden","Trump","Biden","Biden","Trump","Trump","Biden","None"];
 
