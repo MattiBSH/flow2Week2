@@ -428,7 +428,7 @@
             .then(data=>{
             console.log(data);
             var string = data.map(function(inf){
-                return "Country: "+inf.name+" <br> Population: "+inf.population+"<br> area: "+inf.area+"<br> Borders: "+ inf.borders.join(", ");
+                return "Country: "+inf.name+" <br> Population: "+inf.population+"<br> Area: "+inf.area+"<br> Borders: "+ inf.borders.join(", ");
             });
             document.getElementById("p1").innerHTML=string
             target.style.fill="red";
