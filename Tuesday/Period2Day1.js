@@ -68,7 +68,6 @@ function makeTable(){
   var s =persons.map(human=>"<tr><th>"+human.name+"</th><th>"+human.name+"</th></tr>").join("");
   return "<table>"+s+"</table>";
 }
-console.log("__________________________");
 console.log("make table");
 console.log(makeTable());
 /*4*/
