@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>PART 4</title>
+</head>
+
+<body>
+    <!-- 1 -->
+    <h2>Table with person data</h2>
+    <table class="table" id="userTable">
+
+    </table>
+    <button id="reload">Reload</button>
+
+    <br><br>
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">add person</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+
+                <div class="modal-body">
+                    <input type="text" id="fName">fname
+                    <input type="text" id="lName">lname
+                    <input type="text" id="phone">phone
+                    <input type="text" id="city">city
+                    <input type="text" id="street">street
+                    <input type="text" id="zip">zip
+                    <button id="addButton">Add</button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script>
+
+    var r1 = document.getElementById("reload");
+    r1.onclick = reload2;
+    function reload2() {
+        location.reload();
+    }
+
+    getAll();
+    function getAll() {
+        var url = "https://bshproduction.dk/devops-starter/api/person/all";
+        var table1 = document.getElementById("userTable");
+        fetch(url)
+            .then((res) => {
+                return res.json();
+
+            }).then((data) => {
+                const trs = data.all.map((person) => {
+                    return `<tr><td>${person.fName}</td><td>${person.lName}</td><td>${person.phone}</td></tr>`;
+                });
+                const trStr = trs.join('');
+                table1.innerHTML = trStr;
+            });
+    }
+
+
+    let add= document.getElementById("addButton");
+    add.onclick=addPerson;
+    function addPerson() {
+        let fname = document.getElementById("fName").value;
+        let lname = document.getElementById("lName").value;
+        let phone = document.getElementById("phone").value;
+        let street = document.getElementById("street").value;
+        let zip = document.getElementById("zip").value;
+        let city = document.getElementById("city").value;
+        
+
+        let options = {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                fName: fname,
+                lName: lname,
+                phone: phone,
+                street: street,
+                zip: zip,
+                city: city
+            })
+        }
+
+        fetch("https://bshproduction.dk/devops-starter/api/person/", options);
+    }
+</script>
+
+</html>

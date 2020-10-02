@@ -48,7 +48,7 @@ function changenumbers(array){
     }});
   return numbers;
 }
-console.log(myFilter(numbers,changenumbers));
+console.log(myMap(numbers,changenumbers));
 /* b */
 var names2=["Matti","Nikolaj","Vibeke","Mathias"];
 
