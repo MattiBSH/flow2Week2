@@ -1,7 +1,7 @@
-Tuesday - ALL DONE 
+tirsdag - webpack_start_code
+onsdag - startjs
 
-Wednesday - 
+torsdag på den her
+http://mattemanden.surge.sh/
 
-Thursday -
-
-Friday -
+friday - part4 + map
