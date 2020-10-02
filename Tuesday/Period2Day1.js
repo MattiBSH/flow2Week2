@@ -87,12 +87,11 @@ var members = [
   {name : "Janne", age: 25},
   {name : "Martin", age: 22}];
 /*c*/ 
-  var average = members.reduce((accumulator, member,index,arr) => {
-    accumulator += member.age
-   
-    return accumulator/arr.length
-  }, 0)
-  console.log(average);
+    function getAverageAge(members) {
+    return members.reduce((ac, member) => ac + member.age, 0) / members.length;
+    }
+  console.log(getAverageAge(members));
+
 /**d */
 const votes = [ "Biden","Trump","Biden","Biden","Trump","Trump","Biden","None"];
 
@@ -109,14 +108,12 @@ console.log(count(votes));
 
   /**5 */
   /**a 
-   * The console.log() should be made outside the class
-   * So the return type should be a variable and not a console.log();
+   * Man får kun funtions signaturen og derfor kan den ikke blive sat.
   */
 
   /**b
    * same reason as before
-   *  * The console.log() should be made outside the class
-   * So the return type should be a variable and not a console.log();
+  
    */
 
   // Initiate counter
